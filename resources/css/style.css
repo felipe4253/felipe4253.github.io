@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+#header {
+    background-color: lightblue;
+    min-width: 100px;
+    min-height: 200px;
+}
+
+#left-bar {
+    background-color: lightgoldenrodyellow;
+    min-width: 100px;
+    min-height: 400px;
+    display: inline-block;
+    max-width: 200px;
+    width: 200px;
+    height: 100%;
+}
+
+#painel {
+    background-color: greenyellow;
+    min-width: 400px;
+    min-height: 400px;
+    display: inline-block;
+    width: calc(100% - 210px);
+}
