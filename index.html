@@ -4,13 +4,68 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
  <link rel="stylesheet" href="resources/css/style.css">
  <title>Document</title>
 </head>
 <body>
- <div id="header"><h1>Header.</h1></div>
- <div id="left-bar">Left Bar.</div>
- <div id="painel">Painel.</div>
+
+    <!-- Header -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            <a class="navbar-brand" href="#">My Album Application</a>
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <nav id="spy">
+            <ul class="sidebar-nav nav">
+                <li class="sidebar-brand">
+                    <a href="#home"><span class="fa fa-home solo">Album 1</span></a>
+                </li>
+                <li>
+                    <a href="#anch1" data-scroll>
+                        <span class="fa fa-anchor solo">Album 2</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#anch2" data-scroll>
+                        <span class="fa fa-anchor solo">Album 3</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+            <div class="row imagetiles">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                    <img src=https://picsum.photos/200/300/?random class="img-responsive">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                    <img src=https://picsum.photos/200/300/?random class="img-responsive">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                    <img src=https://picsum.photos/200/300/?random class="img-responsive">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                    <img src=https://picsum.photos/200/300/?random class="img-responsive">
+                </div>
+            </div>
+        </div>
+
+    
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
+        <script src="resources/js/script.js"></script>
 </body>
 </html>
