@@ -11,7 +11,9 @@
  <link rel="stylesheet" href="resources/css/style.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+ <script src="resources/js/main.js"></script>
  <title>My Album</title>
+ 
 </head>
 <body>
 
@@ -20,27 +22,37 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-            <a class="navbar-brand" href="#">My Album Application</a>
+                <a class="navbar-brand" href="#">My Album Application</a>
             </div>
         </div><!-- /.container-fluid -->
+
+        <!--Google Auth Part-->
+        <button id="sign-in-or-out-button"
+            style="margin-left: 25px">Login</button>
+        <button id="revoke-access-button"
+            style="display: none; margin-left: 25px">Revogar acesso</button>
+
+        <div id="auth-status" style="display: inline; padding-left: 25px"></div><hr>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script async defer src="https://apis.google.com/js/api.js" 
+            onload="this.onload=function(){};handleClientLoad()" 
+            onreadystatechange="if (this.readyState === 'complete') this.onload()">
+        </script>
+        <script>
+            if (GoogleAuth) {
+                updateSigninStatus();
+            }
+        </script>
+        <!--/Google Auth Part-->
     </nav>
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
+        <h5 style="color:white; margin-bottom: 10px;">Albums</h3>
         <nav id="spy">
-            <ul class="sidebar-nav nav">
+            <ul class="sidebar-nav nav" id="albums-list-container">
                 <li class="sidebar-brand">
-                    <a href="#home"><span class="fa fa-home solo">Album 1</span></a>
-                </li>
-                <li>
-                    <a href="#anch1" data-scroll>
-                        <span class="fa fa-anchor solo">Album 2</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#anch2" data-scroll>
-                        <span class="fa fa-anchor solo">Album 3</span>
-                    </a>
+                    <span class="fa fa-home solo" style="color:white;">Nenhum album encontrado</span>
                 </li>
             </ul>
         </nav>
@@ -48,28 +60,9 @@
 
     <!-- Page Content -->
     <div class="container">
-            <div class="row imagetiles">
-                <a src="https://picsum.photos/200/300/?random" data-toggle="lightbox" class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <img src="https://picsum.photos/200/300/?random" class="img-responsive">
-                </a>
-                <a  src="https://picsum.photos/200/300/?random" class="col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="lightbox">
-                    <img src="https://picsum.photos/200/300/?random" class="img-responsive">
-                </a>
-                <a src="https://picsum.photos/200/300/?random" class="col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="lightbox"> 
-                    <img src="https://picsum.photos/200/300/?random" class="img-responsive">
-                </a>
-                <a src="https://picsum.photos/200/300/?random" class="col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="lightbox">
-                    <img src="https://picsum.photos/200/300/?random" class="img-responsive">
-                </a>
+            <div class="row imagetiles" id="thumb-container">
             </div>
         </div>
 
-    
-        <script>
-            $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox();
-            });
-        </script>
 </body>
 </html>
