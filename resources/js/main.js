@@ -126,8 +126,11 @@ function fetchUserLibraryItems() {
             console.log(data);
             for (var photoIndex in data.mediaItems) {
                 var photoUrl = data.mediaItems[photoIndex].baseUrl + "=w202-h151-no";
+                //<li data-toggle="modal" data-target="#myModal"><a href="#myGallery" data-slide-to="0"><img class="img-thumbnail" src="https://placeimg.com/200/133/nature/1"><br>Caption</a></li>
                 $("#thumb-container").append(
-                    '<img src="'+ photoUrl + '" class="img-responsive">'
+                    '<li class="thumbnail-image" data-toggle="modal" data-target="#myModal"><a href="#myGallery" data-slide-to="0">' +
+                    '<img src="'+ photoUrl + '" class="img-thumbnail">' +
+                    '</a></li>'
                 )
             }
         },

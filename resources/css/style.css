@@ -8,6 +8,10 @@
     float: right;
 }
 
+.thumbnail-image {
+  display: inline-block;
+}
+
 #painel {
     background-color: greenyellow;
     min-width: 400px;
